@@ -197,4 +197,19 @@ class DemoTest {
         assertEquals(0, marsRover.getYLocation());
         assertEquals("N", marsRover.getDirection());
     }
+
+    @Test
+    public void should_minus1_1_N_when_executeCommands_given_0_0_N_and_MLMR() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        String commands = "MLMR";
+
+        //when
+        marsRover.executeCommands(commands);
+
+        //then
+        assertEquals(-1, marsRover.getXLocation());
+        assertEquals(1, marsRover.getYLocation());
+        assertEquals("N", marsRover.getDirection());
+    }
 }
