@@ -13,9 +13,11 @@ public class MarsRover {
 
     public void executeCommands(String commands) {
         if (commands.equals("M")) {
-            if(this.getDirection().equals("S")) {
+            if (this.getDirection().equals("S")) {
                 this.yLocation--;
-            }else{
+            } else if (this.getDirection().equals("E")) {
+                this.xLocation++;
+            } else {
                 this.yLocation++;
             }
         }
