@@ -15,7 +15,22 @@ class DemoTest {
         marsRover.executeCommands(commands);
 
         //then
-        assertEquals(1, marsRover.getyLocation());
+        assertEquals(1, marsRover.getYLocation());
+    }
+
+    @Test
+    public void should_0_1_N_when_executeCommands_given_0_0_N_and_M() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        String commands = "M";
+
+        //when
+        marsRover.executeCommands(commands);
+
+        //then
+        assertEquals(0, marsRover.getXLocation());
+        assertEquals(1, marsRover.getYLocation());
+        assertEquals("N", marsRover.getDirection());
     }
 
 }
