@@ -27,7 +27,7 @@ public class MarsRover {
                     this.yLocation++;
                     break;
             }
-        } else {
+        } else if (commands.equals("L")) {
             switch (this.getDirection()) {
                 case "S":
                     this.direction = "E";
@@ -42,6 +42,8 @@ public class MarsRover {
                     this.direction = "W";
                     break;
             }
+        } else {
+            this.direction = "E";
         }
     }
 
