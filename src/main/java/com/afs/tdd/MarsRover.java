@@ -27,6 +27,8 @@ public class MarsRover {
                     this.yLocation++;
                     break;
             }
+        } else {
+            this.direction = "W";
         }
     }
 
