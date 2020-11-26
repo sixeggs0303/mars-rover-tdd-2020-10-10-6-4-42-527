@@ -34,7 +34,7 @@ class DemoTest {
     }
 
     @Test
-    public void should_0_minus_1_E_when_executeCommands_given_0_0_S_and_M() {
+    public void should_0_minus_1_S_when_executeCommands_given_0_0_S_and_M() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, "S");
         String commands = "M";
