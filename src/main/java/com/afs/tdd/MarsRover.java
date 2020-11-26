@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 public class MarsRover {
     private int xLocation;
     private int yLocation;
@@ -12,52 +14,55 @@ public class MarsRover {
     }
 
     public void executeCommands(String commands) {
-        if (commands.equals("M")) {
-            switch (this.getDirection()) {
-                case "S":
-                    this.yLocation--;
-                    break;
-                case "E":
-                    this.xLocation++;
-                    break;
-                case "W":
-                    this.xLocation--;
-                    break;
-                case "N":
-                    this.yLocation++;
-                    break;
+        Arrays.stream(commands.split("")).forEach(command -> {
+            if (command.equals("M")) {
+                switch (this.getDirection()) {
+                    case "S":
+                        this.yLocation--;
+                        break;
+                    case "E":
+                        this.xLocation++;
+                        break;
+                    case "W":
+                        this.xLocation--;
+                        break;
+                    case "N":
+                        this.yLocation++;
+                        break;
+                }
+            } else if (command.equals("L")) {
+                switch (this.getDirection()) {
+                    case "S":
+                        this.direction = "E";
+                        break;
+                    case "E":
+                        this.direction = "N";
+                        break;
+                    case "W":
+                        this.direction = "S";
+                        break;
+                    case "N":
+                        this.direction = "W";
+                        break;
+                }
+            } else {
+                switch (this.getDirection()) {
+                    case "S":
+                        this.direction = "W";
+                        break;
+                    case "E":
+                        this.direction = "S";
+                        break;
+                    case "W":
+                        this.direction = "N";
+                        break;
+                    case "N":
+                        this.direction = "E";
+                        break;
+                }
             }
-        } else if (commands.equals("L")) {
-            switch (this.getDirection()) {
-                case "S":
-                    this.direction = "E";
-                    break;
-                case "E":
-                    this.direction = "N";
-                    break;
-                case "W":
-                    this.direction = "S";
-                    break;
-                case "N":
-                    this.direction = "W";
-                    break;
-            }
-        } else {
-            switch (this.getDirection()) {
-                case "S":
-                    this.direction = "W";
-                    break;
-                case "E":
-                    this.direction = "S";
-                    break;
-                case "W":
-                    this.direction = "N";
-                    break;
-                case "N":
-                    this.direction = "E";
-                    break;
-            }
-        }
+        });
+
     }
 
     public int getXLocation() {
