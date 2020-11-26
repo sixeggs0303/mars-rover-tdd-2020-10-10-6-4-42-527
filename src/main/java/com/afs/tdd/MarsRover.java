@@ -23,19 +23,24 @@ public class MarsRover {
                 case "W":
                     this.xLocation--;
                     break;
-                default:
+                case "N":
                     this.yLocation++;
                     break;
             }
         } else {
-            if (this.getDirection().equals("S")) {
-                this.direction = "E";
-            } else if (this.getDirection().equals("E")) {
-                this.direction = "N";
-            } else if (this.getDirection().equals("W")) {
-                this.direction = "S";
-            } else {
-                this.direction = "W";
+            switch (this.getDirection()) {
+                case "S":
+                    this.direction = "E";
+                    break;
+                case "E":
+                    this.direction = "N";
+                    break;
+                case "W":
+                    this.direction = "S";
+                    break;
+                case "N":
+                    this.direction = "W";
+                    break;
             }
         }
     }
