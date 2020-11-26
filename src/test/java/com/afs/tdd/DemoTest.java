@@ -137,4 +137,20 @@ class DemoTest {
         assertEquals(0, marsRover.getYLocation());
         assertEquals("S", marsRover.getDirection());
     }
+
+    @Test
+    public void should_0_0_E_when_executeCommands_given_0_0_N_and_R() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        String commands = "R";
+
+        //when
+        marsRover.executeCommands(commands);
+
+        //then
+        assertEquals(0, marsRover.getXLocation());
+        assertEquals(0, marsRover.getYLocation());
+        assertEquals("E", marsRover.getDirection());
+    }
+
 }
