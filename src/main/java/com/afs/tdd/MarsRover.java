@@ -17,19 +17,19 @@ public class MarsRover {
         }
     }
 
-    public int getxLocation() {
+    public int getXLocation() {
         return xLocation;
     }
 
-    public void setxLocation(int xLocation) {
+    public void setXLocation(int xLocation) {
         this.xLocation = xLocation;
     }
 
-    public int getyLocation() {
+    public int getYLocation() {
         return yLocation;
     }
 
-    public void setyLocation(int yLocation) {
+    public void setYLocation(int yLocation) {
         this.yLocation = yLocation;
     }
 
